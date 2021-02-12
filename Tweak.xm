@@ -5,9 +5,9 @@ static double mediaPlayerHeight = 215;
 //static double cornerRadius = 27; //Default 13
 
 //Controls
-static double mediaControlsOriginX = 105;
+static double mediaControlsOriginX = 100;
 static double mediaControlsOriginY = 60;
-static double mediaControlsWidth = 220;
+static double mediaControlsWidth = 230;
 static double mediaControlsHeight = 40;
 //static double mediaControlsScale = 0.8;
 
