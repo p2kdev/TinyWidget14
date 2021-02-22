@@ -38,7 +38,6 @@ static double volumeControlOriginY = 150;
 
 
 //Player Height
-
 %hook CSMediaControlsViewController
 
 	- (CGRect)_suggestedFrameForMediaControls
@@ -52,7 +51,6 @@ static double volumeControlOriginY = 150;
 %end
 
 //Header Labels
-
 %hook MRUNowPlayingLabelView
 
 - (void)setFrame: (CGRect)frame
