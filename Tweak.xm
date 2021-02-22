@@ -57,6 +57,7 @@ static double volumeControlOriginY = 150;
 
 - (void)setFrame: (CGRect)frame
 {
+	//Only make changes for the lockscreen player by checking for parent view controller
 	if([[[self _viewControllerForAncestor] parentViewController] isKindOfClass: %c(MRUCoverSheetViewController)])
 		frame.origin.y = 0;
 	%orig;
@@ -69,6 +70,7 @@ static double volumeControlOriginY = 150;
 
 	- (void)setFrame: (CGRect)frame
 	{
+		//Only make changes for the lockscreen player by checking for parent view controller
 		if([[[self _viewControllerForAncestor] parentViewController] isKindOfClass: %c(MRUCoverSheetViewController)])
 			frame.origin.y = 0;
 
@@ -82,6 +84,8 @@ static double volumeControlOriginY = 150;
 
 	- (void)setFrame: (CGRect)frame
 	{
+		//Apple added constraints to the player control's, so we need to remove them before we can make any changes
+		//Thanks to https://github.com/MDausch/LatchKey/blob/d898fee4a4670b0186118ffa59899c2fd1f4e71d/LatchKey.xm#L153
 		if([[[self _viewControllerForAncestor] parentViewController] isKindOfClass: %c(MRUCoverSheetViewController)])
 		{
 			UIView *super = self.superview;
@@ -113,6 +117,7 @@ static double volumeControlOriginY = 150;
 
 	- (void)setFrame: (CGRect)frame
 	{
+		//Only make changes for the lockscreen player by checking for parent view controller
 		if([[[self _viewControllerForAncestor] parentViewController] isKindOfClass: %c(MRUCoverSheetViewController)])
 			frame.origin.y = volumeControlOriginY;
 
