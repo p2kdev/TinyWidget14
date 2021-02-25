@@ -7,9 +7,7 @@ static double mediaPlayerHeight = 215;
 //Controls
 static double mediaControlsOriginX = 100;
 static double mediaControlsOriginY = 60;
-static double mediaControlsWidth = 230;
 static double mediaControlsHeight = 40;
-//static double mediaControlsScale = 0.8;
 
 static double volumeControlOriginY = 150;
 
@@ -53,13 +51,13 @@ static double volumeControlOriginY = 150;
 //Header Labels
 %hook MRUNowPlayingLabelView
 
-- (void)setFrame: (CGRect)frame
-{
-	//Only make changes for the lockscreen player by checking for parent view controller
-	if([[[self _viewControllerForAncestor] parentViewController] isKindOfClass: %c(MRUCoverSheetViewController)])
-		frame.origin.y = 0;
-	%orig;
-}
+	- (void)setFrame: (CGRect)frame
+	{
+		//Only make changes for the lockscreen player by checking for parent view controller
+		if([[[self _viewControllerForAncestor] parentViewController] isKindOfClass: %c(MRUCoverSheetViewController)])
+			frame.origin.y = 0;
+		%orig;
+	}
 
 %end
 
@@ -102,7 +100,7 @@ static double volumeControlOriginY = 150;
 
 			frame.origin.x = mediaControlsOriginX;
 			frame.origin.y = mediaControlsOriginY;
-			frame.size.width = mediaControlsWidth;
+			frame.size.width = frame.size.width - mediaControlsOriginX;
 			frame.size.height = mediaControlsHeight;
 		}
 		%orig;
