@@ -80,10 +80,10 @@ static double volumeControlOriginY = 150;
 
 	- (void)setFrame: (CGRect)frame
 	{
-		//Apple added constraints to the player control's, so we need to remove them before we can make any changes
-		//Thanks to https://github.com/MDausch/LatchKey/blob/d898fee4a4670b0186118ffa59899c2fd1f4e71d/LatchKey.xm#L153
 		if([[[self _viewControllerForAncestor] parentViewController] isKindOfClass: %c(MRUCoverSheetViewController)])
 		{
+			//Apple added constraints to the player control's, so we need to remove them before we can make any changes
+			//Thanks to https://github.com/MDausch/LatchKey/blob/d898fee4a4670b0186118ffa59899c2fd1f4e71d/LatchKey.xm#L153		
 			UIView *super = self.superview;
 			while (super != nil) {
 				for (NSLayoutConstraint *c in super.constraints) {
