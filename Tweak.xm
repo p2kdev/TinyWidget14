@@ -43,7 +43,20 @@ static double volumeControlOriginY = 150;
 		CGRect frame = %orig;
 		frame.size.height = mediaPlayerHeight;
 
+		CGRect temp = self.view.superview.superview.frame;
+		temp.size.height = mediaPlayerHeight;
+		self.view.superview.superview.frame = temp;
+
 		return frame;
+	}
+
+%end
+
+//Suggestions
+%hook MRUNowPlayingLabelView
+
+	- (void)setShowSuggestionsView:(BOOL)arg1 {
+		%orig(NO);
 	}
 
 %end

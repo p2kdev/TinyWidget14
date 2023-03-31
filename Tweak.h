@@ -49,6 +49,9 @@
 @interface MRUCoverSheetViewController : UIViewController
 @end
 
+@interface CSMediaControlsViewController : UIViewController
+@end
+
 @interface MRUNowPlayingLabelView : UIView
 @end
 
