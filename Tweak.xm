@@ -43,11 +43,12 @@ static double volumeControlOriginY = 150;
 		CGRect frame = %orig;
 		frame.size.height = mediaPlayerHeight;
 
-		CGRect temp = self.view.superview.superview.frame;
-		temp.size.height = mediaPlayerHeight;
-		self.view.superview.superview.frame = temp;
-
 		return frame;
+	}
+
+	-(double)_preferredMediaRemoteHeight
+	{
+		return mediaPlayerHeight;
 	}
 
 %end
