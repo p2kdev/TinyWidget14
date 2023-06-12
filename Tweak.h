@@ -67,3 +67,11 @@
 @interface MRUNowPlayingTransportControlsView : UIView
 	@property (nonatomic,retain) MRUTransportButton * languageOptionsButton;
 @end
+
+@interface MRUNowPlayingControlsView : UIView
+	@property (strong, nonatomic) UIView *volumeControlsView;
+@end
+
+@interface MRUNowPlayingView : UIView
+	@property (strong, nonatomic) MRUNowPlayingControlsView *controlsView;
+@end

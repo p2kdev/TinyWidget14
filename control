@@ -2,7 +2,7 @@ Package: com.p2kdev.tinywidget14
 Name: TinyWidget14
 Depends: mobilesubstrate, firmware (>= 13)
 Conflicts: ch.mdaus.utils, com.johnzaro.perfectmusic13, com.p2kdev.tinywidget
-Version: 1.0.2
+Version: 1.0.3
 Architecture: iphoneos-arm
 Description: Tiny Music Widget on LockScreen!
 Maintainer: P2KDev <p2kdev@gmail.com>

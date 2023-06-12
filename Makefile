@@ -1,6 +1,8 @@
 export THEOS_PACKAGE_SCHEME=rootless
 export TARGET = iphone:clang:12.4:12.0
 
+THEOS_DEVICE_IP=192.168.1.151
+
 PACKAGE_VERSION=$(THEOS_PACKAGE_BASE_VERSION)
 
 include $(THEOS)/makefiles/common.mk
